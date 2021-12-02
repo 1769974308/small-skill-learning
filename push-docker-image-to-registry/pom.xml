@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.taotao.java</groupId>
-    <artifactId>docker-registry</artifactId>
+    <artifactId>push-docker-image-to-registry</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>docker-registry</name>
+    <name>push-docker-image-to-registry</name>
     <description>Demo project for Spring Boot</description>
     <properties>
         <java.version>1.8</java.version>
@@ -53,13 +53,16 @@
                         <phase>package</phase>
                         <goals>
                             <goal>build</goal>
+                            <goal>push</goal>
                         </goals>
                     </execution>
                 </executions>
 
                 <configuration>
                     <!--<dockerHost>http://82.157.137.229:2375</dockerHost>-->
-                   <imageName>small/${project.artifactId}:${image.version}</imageName>
+                    <registryUrl>192.168.10.55:5000</registryUrl>
+                    <pushImage>true</pushImage>
+                    <imageName>192.168.10.55:5000/${project.artifactId}:${image.version}</imageName>
                     <dockerDirectory>src/main/docker</dockerDirectory>
                     <!--<baseImage>java:8</baseImage>
                     <entryPoint>["java", "-jar","/${project.build.finalName}.jar"]</entryPoint>-->
@@ -71,6 +74,8 @@
                             <include>${project.build.finalName}.jar</include>
                         </resource>
                     </resources>
+                    <!--<serverId>docker-hub</serverId>
+                    <registryUrl>https://index.docker.io/v1/</registryUrl>-->
                 </configuration>
             </plugin>
         </plugins>
