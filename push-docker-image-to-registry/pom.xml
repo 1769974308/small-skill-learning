@@ -59,14 +59,10 @@
                 </executions>
 
                 <configuration>
-                    <!--<dockerHost>http://82.157.137.229:2375</dockerHost>-->
-                    <registryUrl>192.168.10.55:5000</registryUrl>
+                    <registryUrl>192.168.10.50:5000</registryUrl>
                     <pushImage>true</pushImage>
-                    <imageName>192.168.10.55:5000/${project.artifactId}:${image.version}</imageName>
+                    <imageName>192.168.10.50:5000/${project.artifactId}:${image.version}</imageName>
                     <dockerDirectory>src/main/docker</dockerDirectory>
-                    <!--<baseImage>java:8</baseImage>
-                    <entryPoint>["java", "-jar","/${project.build.finalName}.jar"]</entryPoint>-->
-
                     <resources>
                         <resource>
                             <targetPath>/</targetPath>
@@ -74,8 +70,6 @@
                             <include>${project.build.finalName}.jar</include>
                         </resource>
                     </resources>
-                    <!--<serverId>docker-hub</serverId>
-                    <registryUrl>https://index.docker.io/v1/</registryUrl>-->
                 </configuration>
             </plugin>
         </plugins>
