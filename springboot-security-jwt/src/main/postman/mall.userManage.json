@@ -1,0 +1,177 @@
+{
+	"info": {
+		"_postman_id": "75e87f91-0168-49c7-8bae-92ab01ef45b3",
+		"name": "mall",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "用户管理",
+			"item": [
+				{
+					"name": "用户注册/admin/register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"taotao\",\r\n    \"password\":123456\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "192.168.10.55:8080/admin/register",
+							"host": [
+								"192",
+								"168",
+								"10",
+								"55"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "登录/admin/login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"taotao\",\r\n    \"password\":123456\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "192.168.10.55:8080/admin/login",
+							"host": [
+								"192",
+								"168",
+								"10",
+								"55"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "获取验证码/member/getAuthCode",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0YW90YW8iLCJjcmVhdGVkIjoxNjM5MTIzMzkxOTU3LCJleHAiOjE2Mzk3MjgxOTF9.gPL0OuzwD5paIOBCkjpOKrX9WmmFCJHRQIwJIIRtPOPGVmzmcmDkpAH5Tvdi5QlWYbQEBdSCVr56xABv3iY5pA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "192.168.10.55:8080/member/getAuthCode?telephone=18819067762",
+							"host": [
+								"192",
+								"168",
+								"10",
+								"55"
+							],
+							"port": "8080",
+							"path": [
+								"member",
+								"getAuthCode"
+							],
+							"query": [
+								{
+									"key": "telephone",
+									"value": "18819067762"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "校验验证码/member/verifyAuthCode",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0YW90YW8iLCJjcmVhdGVkIjoxNjM5MTIzMzkxOTU3LCJleHAiOjE2Mzk3MjgxOTF9.gPL0OuzwD5paIOBCkjpOKrX9WmmFCJHRQIwJIIRtPOPGVmzmcmDkpAH5Tvdi5QlWYbQEBdSCVr56xABv3iY5pA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "192.168.10.55:8080/member/verifyAuthCode?telephone=18819067762&authCode=591102",
+							"host": [
+								"192",
+								"168",
+								"10",
+								"55"
+							],
+							"port": "8080",
+							"path": [
+								"member",
+								"verifyAuthCode"
+							],
+							"query": [
+								{
+									"key": "telephone",
+									"value": "18819067762"
+								},
+								{
+									"key": "authCode",
+									"value": "591102"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "获取用户所有权限",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0YW90YW8iLCJjcmVhdGVkIjoxNjM5MTIzMzkxOTU3LCJleHAiOjE2Mzk3MjgxOTF9.gPL0OuzwD5paIOBCkjpOKrX9WmmFCJHRQIwJIIRtPOPGVmzmcmDkpAH5Tvdi5QlWYbQEBdSCVr56xABv3iY5pA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "192.168.10.55:8080/admin/permission/9",
+							"host": [
+								"192",
+								"168",
+								"10",
+								"55"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"permission",
+								"9"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
